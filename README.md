@@ -23,7 +23,7 @@ I am going to use the required technologies in the following ways.
 
 - **HTML** - Four HTML pages. Use hyperlinks to move between them. One for the main page with search. Another the randomizer. Another to view other users. Lastly, one to create/login and see your account.
 - **CSS** - Style each page that can be used on different sceens. Uses good styling to look like a game app.
-- **React** - Provides login, use points, and save taps as points.
-- **Service** - Used for backend such as login accounts, make taps/points functional, rank accourding to points, and adding/subracting points.
-- **DB/Login** - Store usernames, points, rankings, and 'skin' images. Accounts saved so people can save their points. 
-- **WebSocket** - Every tap is saved and automatically applies to ranking for other users to see. 
+- **React** - Provides login, write reviews, and randomize API games. 
+- **Service** - Used for backend such as login accounts, search games, save games, randomize list to see games, and area to write reviews. 
+- **DB/Login** - Store usernames, games, and reviews. Accounts saved so people can save their games and view them later. 
+- **WebSocket** - every game and review is saved, a popup will show up when someone writes a review.   
