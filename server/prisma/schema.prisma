@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String      @id @default(cuid())
+  name         String
+  email        String      @unique
+  passwordHash String
+  createdAt    DateTime    @default(now())
+  savedGames   SavedGame[]
+  reviews      Review[]
+}
+
+model Game {
+  id          String      @id @default(cuid())
+  rawgId      Int         @unique
+  name        String
+  imageUrl    String
+  description String
+  savedBy     SavedGame[]
+  reviews     Review[]
+}
+
+model SavedGame {
+  userId String
+  gameId String
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  game   Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
+
+  @@id([userId, gameId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  gameId    String
+  text      String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+}
