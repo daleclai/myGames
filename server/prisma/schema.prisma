@@ -21,8 +21,8 @@ model Game {
   id          String      @id @default(cuid())
   rawgId      Int         @unique
   name        String
-  imageUrl    String
-  description String
+  imageUrl    String?
+  description String?
   savedBy     SavedGame[]
   reviews     Review[]
 }
