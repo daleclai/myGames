@@ -4,11 +4,10 @@ const router = Router();
 const RAWG_BASE_URL = "https://api.rawg.io/api";
 
 interface RawgGame {
-  id: number;
-  name: string;
-  background_image: string | null;
-  description: string;
-  rating: number;
+    id: number;
+    name: string;
+    background_image: string | null;
+    description_raw?: string | null;
 }
 
 interface RawgResponse {
@@ -43,8 +42,8 @@ router.get("/search", async (req, res) => {
             id: game.id,
             name: game.name,
             imageUrl: game.background_image,
-            description: game.description,
-            rating: game.rating,
+            description: game.description_raw,
+
         }));
         res.json({ games });
     } catch (error) {
