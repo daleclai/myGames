@@ -99,4 +99,23 @@ router.post("/logout", (req, res) => {
   });
 });
 
+router.get("/me", async (req, res) => {
+  if (!req.session.userId) {
+    res.status(401).json({ error: "Not logged in" });
+    return;
+  }
+
+  const user = await prisma.user.findUnique({
+    where: { id: req.session.userId },
+    select: { id: true, name: true, email: true, createdAt: true },
+  });
+
+  if (!user) {
+    res.status(401).json({ error: "User not found" });
+    return;
+  }
+
+  res.json(user);
+});
+
 export default router;
