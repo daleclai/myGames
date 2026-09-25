@@ -70,3 +70,66 @@ a {
 }
 
 /*search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-green);
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    max-width: 600px;
+}
+
+.search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.search-bar input::placeholder {
+    color: var(--text-secondary);
+}
+
+/*cards */
+.card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-green);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.card:hover {
+    border-color: var(--accent-green);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-body p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* grid layout for search results */
