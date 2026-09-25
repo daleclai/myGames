@@ -1,0 +1,72 @@
+:root {
+      --bg-dark: #0a1410;
+  --bg-panel: #0f1f18;
+  --border-green: #1a4d3a;
+  --accent-green: #00ff9d;
+  --accent-green-dim: #00cc7d;
+  --text-primary: #e8f5ef;
+  --text-secondary: #7fa895;
+  --font-heading: 'Courier New', monospace;
+  --font-body: system-ui, -apple-system, sans-serif;
+  --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+/* nav bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-green);
+}
+
+.navbar .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.navbar .logo span {
+    color: var(--accent-green);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: var(--text-primary);
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--accent-green);
+}
+
+/*search bar */
