@@ -133,3 +133,36 @@ a {
 }
 
 /* grid layout for search results */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* buttons */
+.btn {
+    background: var(--accent-green);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: var(--accent-green-dim);
+}
+
+.btn-outline {
+    background: none;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+.btn-outline:hover {
+    background: rgba(0, 255, 0, 0.1);
+}
